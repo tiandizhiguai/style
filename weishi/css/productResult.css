@@ -1,0 +1,40 @@
+﻿.product_items {
+    width: 1190px;
+	margin-left: auto;
+    margin-right: auto;
+	padding-left: 20px;
+	background-color: #FFF;
+}
+
+.product_item {
+    width: 220px;
+	height: 372px;
+	padding: 5px;
+	border: #FFF 1px solid;
+	position: relative;
+	margin: 5px 0px 5px 5px;
+	display: inline-block;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=3);/*ie*/
+	-moz-box-shadow: 2px 2px 10px #909090;/*firefox*/
+	-webkit-box-shadow: 2px 2px 10px #909090;/*safari或chrome*/
+	box-shadow: 2px 2px 10px #909090;/*opera或ie9*/
+}
+
+.product_hover {
+    border: 1px solid #D31257;
+}
+
+.product_img_item img {
+    width: 210px;
+	height: 220px;
+}
+
+.product_price_item {
+    font-family: arial,verdana,sans-serif;
+	color: #D31257;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 5px;
+	white-space: nowrap;
+}
