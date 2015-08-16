@@ -10,16 +10,16 @@ $(function(){
 		adminContxtFunc("http://www.malasong.com/admin/preAddAdmin");
 	});
 	$(".left_nav_item:eq(1)").click(function(){
-		adminContxtFunc("http://www.malasong.com/admin/preEditCompany");
+		adminContxtFunc("http://www.malasong.com/company/preEditCompany");
 	});
 	$(".left_nav_item:eq(2)").click(function(){
-		adminContxtFunc("http://www.malasong.com/admin/preEditContact");
+		adminContxtFunc("http://www.malasong.com/contact/preEditContact");
 	});
 	$(".left_nav_item:eq(3)").click(function(){
-		adminContxtFunc("http://www.malasong.com/admin/adminProducts");
+		adminContxtFunc("http://www.malasong.com/product/getProducts");
 	});
 	$(".left_nav_item:eq(4)").click(function(){
-		adminContxtFunc("http://www.malasong.com/admin/preAddProduct");
+		adminContxtFunc("http://www.malasong.com/product/preAddProduct");
 	});
 });
 
