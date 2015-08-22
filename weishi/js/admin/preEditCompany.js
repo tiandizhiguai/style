@@ -14,25 +14,6 @@ StringBuilder.prototype.append = function(str)
     this._isBuild=false ;
     return this;    
 }
-//这个实现不太好....
-StringBuilder.prototype.appendFormat=function(template,args){
-    if(arguments.length == 2 && typeof (args) == "object"){
-        template =template.format(args);
-    }
-    else{
-        var params="";
-        for(var i=1;i<arguments.length ;i++){
-            params +='"'+arguments[i]+'"';
-            if(i!=arguments.length-1){
-                params +=",";
-            }
-        }
-        eval("template =template.format("+params+")");
-    }
-    this._strings.push(template);
-    this._isBuild=false;
-    return this;
-}
 
 StringBuilder.prototype.toString = function()    
 {   
@@ -106,6 +87,61 @@ function getProvinceCity(provinceId){
 	}, "json");
 }
 
+function checkCompanyName($value){
+    var $tipsObj = $("#check_name");
+	if($value === ""){
+		$tipsObj.empty().append("请输入公司名称");
+		return false;
+	}
+	if($value.length > 100){
+		$tipsObj.empty().append("不能超过100个字符");
+		return false;
+	}
+	return true;
+}
+
+function checkLegalPerson($value){
+    var $tipsObj = $("#check_legal_persion");
+	if($value === ""){
+		$tipsObj.empty().append("请输入法人代表");
+		return false;
+	}
+	if($value.length > 30){
+		$tipsObj.empty().append("不能超过30个字符");
+		return false;
+	}
+	return true;
+}
+
+function checkProvince($value){
+	if($value == 0){
+		$("#check_province").empty().append("请选择省份");
+		return false;
+	}
+	return true;
+}
+
+function checkCity($value){
+	if($value == 0){
+		$("#check_province").empty().append("请选择城市");
+		return false;
+	}
+	return true;
+}
+
+function checkDetailAddr($value){
+    var $tipsObj = $("#check_detail_addr");
+	if($value === ""){
+		$tipsObj.empty().append("请输入详细地址");
+		return false;
+	}
+	if($value.length > 100){
+		$tipsObj.empty().append("不能超过100个字符");
+		return false;
+	}
+	return true;
+}
+
 $(function(){
     
 	//初始化省份和城市
@@ -118,8 +154,58 @@ $(function(){
 	    getProvinceCity($(this).val());
 	});
 	
+	//验证公司名称
+	$(".company_name").blur(function(){
+	    checkCompanyName($(this).val());
+	}).focus(function(){
+	    $("#check_name").empty();
+	});
+	
+	//验证法人代表
+	$(".legal_persion").blur(function(){
+	    checkLegalPerson($(this).val());
+	}).focus(function(){
+	    $("#check_legal_persion").empty();
+	});
+	
+	//验证省份
+	$(".province_id_select").blur(function(){
+	    checkProvince($(this).val());
+	}).focus(function(){
+	    $("#check_province").empty();
+	});
+	
+	//验证城市
+	$(".city_id_select").blur(function(){
+	    checkCity($(this).val());
+	}).focus(function(){
+	    $("#check_province").empty();
+	});
+	
+	//验证详细地址
+	$(".detail_addr").blur(function(){
+	    checkDetailAddr($(this).val());
+	}).focus(function(){
+	    $("#check_detail_addr").empty();
+	});
+	
+	//验证营业执照
+	/*$(".file").blur(function(){
+	    if($(this).val() === ""){
+		    $("#check_file").append("请上传营业执照");
+		}
+	}).focus(function(){
+	    $("#check_file").empty();
+	});*/
+	
 	$("#edit_company_btn").click(function(){
-		$(".edit_company_form").submit();
+	    if(checkCompanyName($(".company_name").val())
+		    && checkLegalPerson($(".legal_persion").val())
+			&& checkProvince($(".province_id_select").val())
+			&& checkCity($(".province_id_city").val())
+			&& checkDetailAddr($(".detail_addr").val())){
+		    $(".edit_company_form").submit();
+	    }
 	});
 });
 
