@@ -31,6 +31,16 @@ function checkIdNumber($value){
 
 $(function(){
 
+    //初始化省份和城市
+	var $selectProvinceId = $(".province_id_value").val();
+	getAllProvince($selectProvinceId);
+	getProvinceCity($selectProvinceId);
+	
+	//选择省份联动城市
+	$(".province_id_select").change(function(){
+	    getProvinceCity($(this).val());
+	});
+
     //验证用户名
 	$(".realName").blur(function(){
 	    checkName($(this).val());
