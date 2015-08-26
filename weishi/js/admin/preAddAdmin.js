@@ -29,6 +29,22 @@ function checkIdNumber($value){
 	return true;
 }
 
+function checkProvince($value){
+	if($value == 0){
+		$("#check_province").empty().append("请选择省份");
+		return false;
+	}
+	return true;
+}
+
+function checkCity($value){
+	if($value == 0){
+		$("#check_province").empty().append("请选择城市");
+		return false;
+	}
+	return true;
+}
+
 $(function(){
 
     //初始化省份和城市
@@ -55,9 +71,26 @@ $(function(){
 	    $("#check_idNumber").empty();
 	});
 	
+	//验证省份
+	$(".province_id_select").blur(function(){
+	    checkProvince($(this).val());
+	}).focus(function(){
+	    $("#check_province").empty();
+	});
+	
+	//验证城市
+	$(".city_id_select").blur(function(){
+	    checkCity($(this).val());
+	}).focus(function(){
+	    $("#check_province").empty();
+	});
+	
 	//提交
     $("#pre_add_admin_btn").click(function(){
-	    if(checkName($(".realName").val()) && checkIdNumber($(".idNumber").val())){
+	    if(checkName($(".realName").val()) 
+		    && checkIdNumber($(".idNumber").val())
+			&& checkProvince($(".province_id_select").val())
+			&& checkCity($(".province_id_city").val())){
 		    $(".pre_add_admin_form").submit();
 		}
 	});
