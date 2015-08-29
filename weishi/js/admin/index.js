@@ -1,3 +1,9 @@
+var adminContxtFunc = function(url){
+    $.get(url,function(data){
+	    $(".admin_right").empty().append(data);
+	},"html");
+}
+
 $(function(){
     $(".left_nav_item").each(function(){
 	    var $thisObj = $(this);
@@ -17,17 +23,12 @@ $(function(){
 		adminContxtFunc("http://www.malasong.com/contact/preEditContact?userId="+$userId);
 	});
 	$(".left_nav_item:eq(3)").click(function(){
-		adminContxtFunc("http://www.malasong.com/product/getProducts?userId="+$userId);
+		adminContxtFunc("http://www.malasong.com/product/getAdminProducts?pageNo=1&pageSize=10&userId="+$userId);
 	});
 	$(".left_nav_item:eq(4)").click(function(){
 		adminContxtFunc("http://www.malasong.com/product/preAddProduct?userId="+$userId);
 	});
+	$(".left_nav_item:eq(5)").click(function(){
+		adminContxtFunc("http://www.malasong.com/admin/preEditPassword?userId="+$userId);
+	});
 });
-
-var adminContxtFunc = function(url){
-    var $adminContxt = $(".admin_right");
-	$adminContxt.empty();
-    $.get(url,function(data){
-	    $adminContxt.append(data);
-	},"html");
-}

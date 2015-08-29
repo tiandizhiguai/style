@@ -8,7 +8,7 @@ $(function(){
 		}else{
 		    $.post('http://www.malasong.com/json/getUser',{loginName: $value},function(data){
 			  if(data.loginName.toLowerCase() == $value.toLowerCase()){
-				  $("#check_user").append("该登陆已经存在");
+				  $("#check_user").append("该登陆名已经存在");
 			  }
 			}, "json");
 		}
