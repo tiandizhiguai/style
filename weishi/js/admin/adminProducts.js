@@ -1,15 +1,25 @@
+var adminContxtFunc = function(url){
+    $.get(url,function(data){
+	    $(".admin_right").empty().append(data);
+	},"html");
+}
+
 $(function(){
-    
+	//修改
 	$(".pre_edit_product_action").click(function(){
 	    var $productId = $(this).attr("productId");
 		adminContxtFunc("http://www.malasong.com/product/preEditProduct?id="+$productId);
 	});
 	
+	//删除
 	$(".pre_delete_product_action").click(function(){
-	    var $productId = $(this).attr("productId");
-		adminContxtFunc("http://www.malasong.com/product/preEditProduct?id="+$productId);
+		if(confirm("确认删除？")){
+		    var $productId = $(this).attr("productId");
+		    adminContxtFunc("http://www.malasong.com/product/deleteProduct?id="+$productId);
+		}
 	});
 	
+	//图片管理
 	$(".admin_imgs").click(function(){
 	    var $productId = $(this).attr("productId");
 		adminContxtFunc("http://www.malasong.com/product/adminImgs?id="+$productId);
