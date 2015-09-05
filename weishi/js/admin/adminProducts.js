@@ -2,17 +2,17 @@ $(function(){
     
 	$(".pre_edit_product_action").click(function(){
 	    var $productId = $(this).attr("productId");
-		adminContxtFunc("http://www.malasong.com/admin/preEditProduct?id="+$productId);
+		adminContxtFunc("http://www.malasong.com/product/preEditProduct?id="+$productId);
 	});
 	
 	$(".pre_delete_product_action").click(function(){
 	    var $productId = $(this).attr("productId");
-		adminContxtFunc("http://www.malasong.com/admin/preEditProduct?id="+$productId);
+		adminContxtFunc("http://www.malasong.com/product/preEditProduct?id="+$productId);
 	});
 	
 	$(".admin_imgs").click(function(){
 	    var $productId = $(this).attr("productId");
-		adminContxtFunc("http://www.malasong.com/admin/adminImgs?id="+$productId);
+		adminContxtFunc("http://www.malasong.com/product/adminImgs?id="+$productId);
 	});
 	
 	var $userId = $(".userId").val();

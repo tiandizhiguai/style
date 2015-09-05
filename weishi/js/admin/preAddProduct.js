@@ -125,7 +125,7 @@ $(function(){
 	    $("#check_files").empty();
 	});
 	
-	//提交验证
+	//新增商品
 	$("#add_product_btn").click(function(){
 	    if(checkTitle($(".title").val()) 
 			&& checkPrice($(".price").val()) 
@@ -137,7 +137,14 @@ $(function(){
 	    }
 	});
 	
-	$("#add_file_btn").click(function(){
-	    
+	//修改商品
+	$("#edit_product_btn").click(function(){
+	    if(checkTitle($(".title").val()) 
+			&& checkPrice($(".price").val()) 
+			&& checkDescription($(".description").val()) 
+			&& checkUnit($(".unit").val()) 
+			&& checkBeginQuantity($(".begin_quantity").val())){
+	        $(".edit_product_form").submit();
+	    }
 	});
 });
