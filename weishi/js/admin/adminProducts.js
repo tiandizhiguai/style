@@ -19,10 +19,16 @@ $(function(){
 		}
 	});
 	
-	//图片管理
-	$(".admin_imgs").click(function(){
+	//上传图片
+	$(".upload_img_action").click(function(){
 	    var $productId = $(this).attr("productId");
-		adminContxtFunc("http://www.malasong.com/product/adminImgs?id="+$productId);
+		adminContxtFunc("http://www.malasong.com/img/preUploadImgs?toId="+$productId);
+	});
+	
+	//图片管理
+	$(".product_imgs_action").click(function(){
+	    var $productId = $(this).attr("productId");
+		adminContxtFunc("http://www.malasong.com/img/adminImgs?types=secondary&pageSize=10&toId="+$productId);
 	});
 	
 	var $userId = $(".userId").val();
