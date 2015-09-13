@@ -67,7 +67,7 @@ function getAllProvince(selectProvinceId){
 
 //获取城市
 function getProvinceCity(provinceId){
-	$.post('http://www.malasong.com/json/getCityList',{'provinceId': provinceId}, function(data){
+	$.post('http://www.malasong.com/json/getCities',{'provinceId': provinceId}, function(data){
 	  if(data){
 		  var $selectCityId = $(".city_id_value").val();
 		  var context = new  StringBuilder();
@@ -83,6 +83,27 @@ function getProvinceCity(provinceId){
 			  context.append("</option>");
 		  }
 		  $(".city_id_select").empty().append(context.toString());
+	  }
+	}, "json");
+}
+
+//获取类目
+function getCategories(selectedCategoryId, contextObj){
+	$.post('http://www.malasong.com/json/getCategories',{'level': 'three'}, function(data){
+	  if(data){
+		  var context = new  StringBuilder();
+		  for(var i = 0; i < data.length; i++){
+			  context.append("<option value='");
+			  context.append(data[i].id);
+			  context.append("'");
+			  if(selectedCategoryId == data[i].id){
+			      context.append(" selected");
+			  }
+			  context.append(">");
+			  context.append(data[i].name);
+			  context.append("</option>");
+		  }
+		  contextObj.empty().append(context.toString());
 	  }
 	}, "json");
 }

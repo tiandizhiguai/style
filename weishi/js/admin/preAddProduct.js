@@ -83,6 +83,10 @@ function checkFiles($value){
 }
 
 $(function(){
+
+    //获取类目
+	getCategories($(".old_category_id").val(), $(".category_id"));
+
     //验证标题
 	$(".title").blur(function(){
 		checkTitle($(this).val());
