@@ -6,6 +6,16 @@
     margin-right: auto;
 }
 
+.detail_title{
+    font-size: 18px;
+}
+
+.basic_info table tr td{
+    height: 30px;
+	padding: 10px;
+	font-weight:bold;
+}
+
 .product_details li{
    padding: 10px;
 }
@@ -31,4 +41,17 @@
 
 .contact_item span{
     margin-right: 20px;
+}
+
+.comment{
+    width:200px;
+	height: 80px;
+}
+
+.paging{
+    text-align: center;
+}
+
+.paging ul li{
+   display: inline-block;
 }
