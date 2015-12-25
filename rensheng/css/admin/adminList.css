@@ -1,0 +1,6 @@
+﻿.product_table {
+	display: inline-block;
+	max-height: 400px;
+	min-height: 400px;
+	overflow: hidden;
+}

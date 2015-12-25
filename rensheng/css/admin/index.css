@@ -1,0 +1,64 @@
+﻿.admin_index {
+    min-height: 460px;
+	width: 1190px;
+}
+
+.admin_welcome{
+    height: 460px;
+	width: 1030px;
+	line-height: 460px;
+	text-align: center;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #2500DE, 0 0 70px #ff00de;
+	font-size: 40px;
+}
+
+.admin_left {
+    display: inline-block;
+	background-color: #E8E9EE;
+	height: 460px;
+    width: 150px;
+	border-right: solid 1px #C3C3D6;
+	vertical-align:top;
+}
+
+.admin_right {
+    width: 1030px;
+	display: inline-block;
+	max-height: 460px;
+	min-height: 460px;
+	overflow: hidden;
+	vertical-align:top;
+	border-right: solid 1px #C3C3D6;
+	overflow-y: auto;
+}
+
+.left_nav_item{
+    padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.left_nav_item a{
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	display: block;
+    font-style: normal;
+    color: #636775;
+}
+
+.left_nav_click {
+    background-color: #428BCA;
+}
+
+.left_nav_click a{
+    color: #FFF;
+}
+
+.paging{
+    float: right;
+}
+
+.paging ul li {
+    display: inline-block;
+	vertical-align: middle;
+}

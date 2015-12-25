@@ -1,0 +1,26 @@
+﻿.preRegister {
+    min-height: 485px;
+	width: 1190px;
+	background-color: #FFF;
+	margin-left: auto;
+    margin-right: auto;
+	padding-top: 50px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.preRegister_info{
+    width: 400px;
+}
+
+.preRegister ul li{
+    display: inline-block;
+}
+
+.preRegister_info table td{
+    height: 50px;
+}
+
+.preRegister_img{
+    padding-right: 100px;
+}
