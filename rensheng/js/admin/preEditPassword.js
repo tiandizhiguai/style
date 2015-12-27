@@ -1,31 +1,35 @@
-function checkOldPassword(password){
-	if(password == ""){
+function checkOldPassword(passwd){
+	if(passwd == ""){
 		$("#check_old_password").empty().append("请输入原始密码");
 		return false;
 	}else{
-		$.getJSON('http://www.malasong.com/json/getUser',{loginName: $(".loginName").val()},function(data){
-		  if(data.passwd != password){
-			  $("#check_old_password").empty().append("密码不正确");
-			  return false;
-		  }
-		});
+		$.getJSON(
+			'//www.rensheng.com/json/checkPassword',
+			{loginName: $(".loginName").val(), "passwd" : passwd},
+			function(data){
+				if(!data){
+					$("#check_old_password").empty().append("密码不正确");
+					return false;
+				}
+			}
+		);
 	}
 	return true;
 }
 
-function checkNewPassword(password){
-    if(password == ""){
+function checkNewPassword(passwd){
+    if(passwd == ""){
 		$("#check_passwd").empty().append("请输入新密码");
 		return false;
 	}
 	return true;
 }
 
-function checkRePassword(password){
-	if(password == ""){
+function checkRePassword(passwd){
+	if(passwd == ""){
 		$("#check_re_password").empty().append("请输入确认密码");
 		return false;
-	}else if(password != $(".passwd").val()){
+	}else if(passwd != $(".passwd").val()){
 		$("#check_re_password").empty().append("两次密码不一致");
 		return false;
 	}
