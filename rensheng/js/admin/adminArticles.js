@@ -28,8 +28,6 @@ $(function(){
 		if($pageNo > 1){
 		   $prePage = $pageNo - 1;
 		   adminContxtFunc("//www.rensheng.com/article/adminArticles?pageSize=10&pageNo="+$prePage+"&userId="+$userId);
-		}else{
-		    $("#pre_page").class("disabled");
 		}
 	});
 	
@@ -37,8 +35,6 @@ $(function(){
 		if($pageNo < $totalPage){
 		    var $nextPage = $pageNo + 1;
 		    adminContxtFunc("//www.rensheng.com/article/adminArticles?pageSize=10&pageNo="+$nextPage+"&userId="+$userId);
-		}else{
-		    $("#next_page").class("disabled");
 		}
 	});
 });

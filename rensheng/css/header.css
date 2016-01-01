@@ -21,6 +21,15 @@
 	padding-right: 15px;
 }
 
+.nav_bar_item a{
+	text-decoration: none;
+}
+
 .header_right {
     float: right;
+}
+
+.user_photo{
+	width:20px;
+	height:20px;
 }
