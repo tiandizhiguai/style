@@ -1,12 +1,8 @@
 $(function(){
-    $(".nav_bar_item").each(function(){
-	    var thisObj = $(this);
-	    thisObj.mouseover(function(){
-		    thisObj.addClass("bar_hover");
+    $(".nav_bar_item").on('click',function(){
+        $(".nav_bar_item").each(function(){
+			$(this).removeClass("bar_hover");
 		});
-		
-		thisObj.mouseout(function(){
-		    thisObj.removeClass("bar_hover");
-		});
+		$(this).addClass("bar_hover");
 	});
 });
