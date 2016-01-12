@@ -1,6 +1,6 @@
 var getProductCommnets = function(pageNoValue){
     var $productId = $("#product_id").val();
-    $.get("http://www.malasong.com/productComment/getComments",{pageSize:10, productId:$productId, pageNo: pageNoValue},function(data){
+    $.get("//www.rensheng.com/productComment/getComments",{pageSize:10, productId:$productId, pageNo: pageNoValue},function(data){
 	    $("#product_comment").empty().append(data);
 	});
 }
@@ -31,8 +31,8 @@ $(function(){
 	$(".add_comment_btn").click(function(){
 	    //只有登录的用户才能评论
 	    var $loginUserId = $(".login_user_id").val();
-		if(!$loginUserId || $loginUserId === ""){
-		    location.href = "http://www.malasong.com/user/preLogin";
+		if(!$loginUserId || $!loginUserId === ""){
+		    location.href = "//www.rensheng.com/user/preLogin";
 			return;
 		}
 	
@@ -43,7 +43,7 @@ $(function(){
 		}else if($comment.val().length > 200){
 		    $(".check_comment").empty().append("不能多于200字");
 		}else {
-		    $.post("http://www.malasong.com/productComment/addComment",{productId:$productId,userId:$loginUserId,comment:$comment.val()},function(data){
+		    $.post("//www.rensheng.com/productComment/addComment",{productId:$productId,userId:$loginUserId,comment:$comment.val()},function(data){
 				$("#product_comment").empty().append(data);
 				$(".check_comment").empty().append("评论成功");
 			});

@@ -1,44 +1,69 @@
-﻿.rensheng_items {
+﻿.items {
     width: 1190px;
 	margin-left: auto;
     margin-right: auto;
 	background-color: #FFF;
 }
 
-.rensheng_left_item {
+.left_item {
     width: 850px;
 	min-height: 700px; 
 	display: inline-block;
 	text-align:left;
 }
 
-.rensheng_right_item {
+.right_item {
     width: 320px;
 	height: 700px;
 	padding: 15px 40px 15px 40px;
-
 	position: absolute;
 	margin: 0px 0px 0px 15px;
 	display: inline-block;
 }
 
-.rensheng_left_title{
+.left_title{
 	border-bottom: #E1E1E1 1px solid;
 	font-size: 14px;
     color: #666;
     font-weight: 700;
-	padding: 10px;
+	padding: 10px 10px 10px 20px;
 }
 
-.rensheng_content_item{
+.content_detail{
 	border-bottom: #E1E1E1 1px solid;
-    padding: 10px;
+    padding: 20px;
+	line-height:2;
 }
 
-.rensheng_content_title{
-	font-size:14px;
-	font-weight:bold;
+
+.content_bottom {
+	margin-top:10px;
 }
+
+.content_bottom a{
+	margin-right:10px;
+}
+
+.content_bottom a:link {
+    color: #999;
+	text-decoration: none;
+}
+
+.content_bottom a:visited {
+    color: #999;
+	text-decoration: none;
+}
+
+.content_bottom a:hover {
+    color: #044E97;
+	text-decoration: underline;
+}
+
+.content_bottom a:active {
+	color: #044E97;
+	text-decoration: underline;
+}
+
 
 .paging{
     text-align: center;
