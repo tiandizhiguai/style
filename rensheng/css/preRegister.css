@@ -1,26 +1,33 @@
 ﻿.preRegister {
-    min-height: 485px;
-	width: 1190px;
-	background-color: #FFF;
+	border-top: #85B4DD 1px solid;
+    min-height: 500px;
 	margin-left: auto;
     margin-right: auto;
-	padding-top: 50px;
+	font-size: 12px;
+	padding-top:50px;
+}
+
+.preRegister form{
+	margin-left: auto;
+    margin-right: auto;
 	text-align: center;
-	font-size: 18px;
+	padding-left:500px;
 }
 
-.preRegister_info{
-    width: 400px;
+.preRegister table td{
+    height:50px;
+	width:250px;
 }
 
-.preRegister ul li{
-    display: inline-block;
+.company_logo{
+	font-size:60px;
+	color:#2D6CA2;
 }
 
-.preRegister_info table td{
-    height: 50px;
+.register_login_btn{
+	width:100%;
 }
 
-.preRegister_img{
-    padding-right: 100px;
+.input-group{
+	width:100%;
 }

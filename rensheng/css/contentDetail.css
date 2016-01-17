@@ -3,6 +3,7 @@
 	margin-left: auto;
     margin-right: auto;
 	background-color: #FFF;
+	line-height:2;
 }
 
 .left_item {
@@ -22,22 +23,50 @@
 }
 
 .left_title{
-	border-bottom: #E1E1E1 1px solid;
 	font-size: 14px;
-    color: #666;
-    font-weight: 700;
-	padding: 10px 10px 10px 20px;
+	padding: 10px 10px 0px 20px;
 }
 
-.content_detail{
-	border-bottom: #E1E1E1 1px solid;
+.content_author{
+	padding: 10px 10px 0px 20px;
+}
+
+.content_user_photo{
+	width:20px;
+	height:20px;
+}
+
+.content_topic{
+	color:#999;
+	margin-left:10px;
+}
+
+.content_topic a:link {
+    color: #999;
+	text-decoration: none;
+}
+
+.content_topic a:visited {
+    color: #999;
+	text-decoration: none;
+}
+
+.content_topic a:hover {
+    color: #044E97;
+	text-decoration: underline;
+}
+
+.content_topic a:active {
+	color: #044E97;
+	text-decoration: underline;
+}
+
+.content_item{
     padding: 20px;
-	line-height:2;
 }
-
 
 .content_bottom {
-	margin-top:10px;
+	margin-top:20px;
 }
 
 .content_bottom a{
@@ -64,6 +93,74 @@
 	text-decoration: underline;
 }
 
+#heart {
+    position: relative;
+    width: 19px;
+    height: 18px;
+}
+
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 5px;
+    margin-top:8px;
+    width: 6px;
+    height: 10px;
+    background: #999;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
+.comment_title{
+	font-size: 14px;
+	padding: 10px 10px 0px 20px;
+}
+.comment_content_author{
+	padding: 10px 10px 20px 0px;
+}
+
+.comment_content_user_photo{
+	width:20px;
+	height:20px;
+}
+
+.comment_conent_time{
+	padding-left:10px;
+	color:#999;
+}
+
+.comment_content_item{
+	border-top: #E1E1E1 1px solid;
+    padding: 10px 20px 20px 20px;
+}
+
+.open_close_comment{
+	cursor:pointer;
+}
 
 .paging{
     text-align: center;
