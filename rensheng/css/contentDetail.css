@@ -7,7 +7,7 @@
 }
 
 .left_item {
-    width: 850px;
+    width: 600px;
 	min-height: 700px; 
 	display: inline-block;
 	text-align:left;
@@ -18,7 +18,7 @@
 	height: 700px;
 	padding: 15px 40px 15px 40px;
 	position: absolute;
-	margin: 0px 0px 0px 15px;
+	margin: 0px 0px 0px 40px;
 	display: inline-block;
 }
 
@@ -163,9 +163,14 @@
 }
 
 .paging{
-    text-align: center;
+	padding-left:20px;
+    text-align: left;
 }
 
 .paging ul li{
    display: inline-block;
+}
+
+a:visited {
+    color: #428bca;
 }

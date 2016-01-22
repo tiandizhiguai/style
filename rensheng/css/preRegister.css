@@ -1,5 +1,5 @@
 ﻿.preRegister {
-	border-top: #85B4DD 1px solid;
+	border-top: #0D77E4 1px solid;
     min-height: 500px;
 	margin-left: auto;
     margin-right: auto;
@@ -30,4 +30,6 @@
 
 .input-group{
 	width:100%;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #2500DE, 0 0 70px #ff00de;
+	font-size: 20px;
 }

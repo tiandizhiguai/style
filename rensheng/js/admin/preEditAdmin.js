@@ -47,16 +47,6 @@ function checkCity($value){
 
 $(function(){
 
-    //初始化省份和城市
-	//var $selectProvinceId = $(".province_id_value").val();
-	//getAllProvince($selectProvinceId);
-	//getProvinceCity($selectProvinceId);
-	
-	//选择省份联动城市
-	//$(".province_id_select").change(function(){
-	//    getProvinceCity($(this).val());
-	//});
-
     //验证用户名
 	$(".realName").blur(function(){
 	    checkName($(this).val());
@@ -65,30 +55,15 @@ $(function(){
 	});
 	
 	//验证身份证号
-	$(".idNumber").blur(function(){
-	     checkIdNumber($(this).val());
-	}).click(function(){
-	    $("#check_idNumber").empty();
-	});
-	
-	//验证省份
-	//$(".province_id_select").blur(function(){
-	//    checkProvince($(this).val());
-	//}).focus(function(){
-	//    $("#check_province").empty();
-	//});
-	
-	//验证城市
-	//$(".city_id_select").blur(function(){
-	//    checkCity($(this).val());
-	//}).focus(function(){
-	//    $("#check_province").empty();
+	//$(".idNumber").blur(function(){
+	//     checkIdNumber($(this).val());
+	//}).click(function(){
+    //$("#check_idNumber").empty();
 	//});
 	
 	//提交
     $("#pre_add_admin_btn").click(function(){
-	    if(checkName($(".realName").val()) 
-		    && checkIdNumber($(".idNumber").val())){
+	    if(checkName($(".realName").val())){
 		    $(".pre_add_admin_form").submit();
 		}
 	});
