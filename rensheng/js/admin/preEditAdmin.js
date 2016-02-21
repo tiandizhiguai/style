@@ -14,8 +14,8 @@ function checkName($value){
 function checkIdNumber($value){
     var $tipsObj = $("#check_idNumber");
     if($value === ""){
-	    $tipsObj.empty().append("请输入身份证");
-	    return false;
+	    //$tipsObj.empty().append("请输入身份证");
+	    return true;
 	}
 	var $reg = /^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/;
 	if(!$reg.test($value)){
@@ -55,15 +55,15 @@ $(function(){
 	});
 	
 	//验证身份证号
-	//$(".idNumber").blur(function(){
-	//     checkIdNumber($(this).val());
-	//}).click(function(){
-    //$("#check_idNumber").empty();
-	//});
+	$(".idNumber").blur(function(){
+	     checkIdNumber($(this).val());
+	}).click(function(){
+    $("#check_idNumber").empty();
+	});
 	
 	//提交
     $("#pre_add_admin_btn").click(function(){
-	    if(checkName($(".realName").val())){
+	    if(checkName($(".realName").val()) && checkIdNumber($(".idNumber").val())){
 		    $(".pre_add_admin_form").submit();
 		}
 	});
