@@ -4,7 +4,7 @@ function checkLoginName(loginName){
 		return false;
 	}
 	
-	$.post('//www.rensheng.com/json/loginNameExists',{'loginName': loginName},function(data){
+	$.post('//www.1huiwang.com/json/loginNameExists',{'loginName': loginName},function(data){
 		if(data){
 			$("#check_user").empty().append("该登陆名已经存在");
 			return false;

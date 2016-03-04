@@ -4,7 +4,7 @@ function checkOldPassword(passwd){
 		return false;
 	}else{
 		$.getJSON(
-			'//www.rensheng.com/json/checkPassword',
+			'//www.1huiwang.com/json/checkPassword',
 			{loginName: $(".loginName").val(), "passwd" : passwd},
 			function(data){
 				if(!data){

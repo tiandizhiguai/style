@@ -22,7 +22,7 @@ $(function(){
 	
     $("#user_idea_btn").click(function(){
 	    if(checkContent($("#content").val())){
-		    $.post('//www.rensheng.com/json/addUserIdea',{'content': $("#content").val()},function(data){
+		    $.post('//www.1huiwang.com/json/addUserIdea',{'content': $("#content").val()},function(data){
 				if(!data.hasError){
 					$("#check_cotent").empty().append("感谢您的反馈，我们会尽快处理");
 					$("#content").val("");

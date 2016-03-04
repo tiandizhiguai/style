@@ -3,12 +3,12 @@ function addComment(){
 		var loginUserId = $(".login_user_id").val();
 		var articleId = $("#article_id").val();
 		if(!loginUserId || loginUserId == null || loginUserId == ""){
-			window.location.href="//www.rensheng.com/user/preLogin?redirectUri=/article/detail?id=" + articleId + "#footer";
+			window.location.href="//www.1huiwang.com/user/preLogin?redirectUri=/article/detail?id=" + articleId + "#footer";
 			return;
 		}
 		
 		var params = {"articleId":articleId, "comment":$("#comment_content").val(), "userId" : loginUserId};
-		$.post("//www.rensheng.com/articleComment/addComment", params, function(data){
+		$.post("//www.1huiwang.com/articleComment/addComment", params, function(data){
 			$(".article_comment").empty().append(data);
 			$(".check_comment").empty().append("评论成功");
 		});
