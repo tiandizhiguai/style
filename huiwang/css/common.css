@@ -42,6 +42,10 @@ body {
 	color: #222;
 }
 
+html,body {
+	height:100%;
+}
+
 .tips{
     color: red;
 }
