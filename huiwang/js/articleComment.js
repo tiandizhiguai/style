@@ -7,7 +7,9 @@ function addComment(){
 			return;
 		}
 		
-		var params = {"articleId":articleId, "comment":$("#comment_content").val(), "userId" : loginUserId};
+		//此处的editor对象在editor.js文件中定义
+		var comment = editor.html();
+		var params = {"articleId":articleId, "comment":comment, "userId" : loginUserId};
 		$.post("//www.1huiwang.com/articleComment/addComment", params, function(data){
 			$(".article_comment").empty().append(data);
 			$(".check_comment").empty().append("评论成功");

@@ -58,15 +58,19 @@ $(function(){
 	    $("#check_title").empty();
 	});
 	
-	$(".content").blur(function(){
-		checkContent($(this).val());
+	$("#text_content").blur(function(){
+		checkContent(editor.html());
 	}).focus(function(){
 		$("#check_content").empty();
 	});
 	
 	$("#pre_add_btn").click(function(){
+		
+		//此处的editor对象在editor.js文件中定义
+		var comment = editor.html();
 	    if(checkTitle($(".title").val())
-		    && checkContent($(".content").val())){
+		    && checkContent(comment)){
+			$("#content").val(comment);
 		    $(".add_form").submit();
 	    }
 	});

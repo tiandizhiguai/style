@@ -97,9 +97,20 @@ function paraiseAndCare(){
 
 var getCommnents = function(pageNoValue){
 	var articleIdValue = $("#article_id").val();
-    $.get("//www.1huiwang.com/articleComment/getComments",{pageSize:10, articleId:articleIdValue, pageNo: pageNoValue},function(data){
-	    $(".article_comment").empty().append(data);
-	});
+	$.ajax({  
+        type:'get',  
+        url : '//www.1huiwang.com/json/getComments', 
+        dataType : 'jsonp',
+		data:{'pageSize':10, 'articleId':articleIdValue, 'pageNo': pageNoValue},
+		jsonp: "callbackName",
+        jsonpCallback:"jquery_callback",  
+        success : function(data) {  
+            $(".article_comment").empty().append(data.data); 
+        },  
+        error : function(jqXHR, textStatus, errorThrown) {
+			
+        }  
+    });
 }
 
 $(function(){
