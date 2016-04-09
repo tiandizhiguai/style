@@ -52,6 +52,20 @@ $(function(){
 	var topicId = $("#topic_id").val();
 	initTopic(topicId);
 	
+	var articleId = $("#article_id").val();
+	if(articleId){
+		
+		$.getJSON(
+			'//www.1huiwang.com/json/getArticleDetail',
+			{'artcileId' : articleId},
+			function(result){
+				if(result && result.data){
+					editor.html(result.data.content);
+				}
+			}
+		);
+	}
+	
 	$(".title").blur(function(){
 	    checkTitle($(this).val());
 	}).focus(function(){
@@ -67,7 +81,7 @@ $(function(){
 	$("#pre_add_btn").click(function(){
 		
 		//此处的editor对象在editor.js文件中定义
-		var comment = editor.html();
+		comment = editor.html();
 	    if(checkTitle($(".title").val())
 		    && checkContent(comment)){
 			$("#content").val(comment);
