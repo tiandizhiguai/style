@@ -7,7 +7,7 @@
 }
 
 .left_item {
-    width: 600px;
+    width: 500px;
 	min-height: 700px; 
 	display: inline-block;
 	text-align:left;
@@ -24,11 +24,11 @@
 
 .left_title{
 	font-size: 14px;
-	padding: 10px 10px 0px 20px;
+	padding: 10px 0px 0px 0px;
 }
 
 .content_author{
-	padding: 10px 10px 0px 20px;
+	padding: 10px 0px 0px 0px;
 }
 
 .content_user_photo{
@@ -62,7 +62,7 @@
 }
 
 .content_item{
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
 }
 
 .content_bottom {
@@ -137,10 +137,10 @@
 
 .comment_title{
 	font-size: 14px;
-	padding: 10px 10px 0px 20px;
+	padding: 10px 0px 0px 0px;
 }
 .comment_content_author{
-	padding: 10px 10px 20px 0px;
+	padding: 10px 0px 20px 0px;
 }
 
 .comment_content_user_photo{
@@ -155,7 +155,7 @@
 
 .comment_content_item{
 	border-top: #E1E1E1 1px solid;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 0px 20px 0px;
 }
 
 .open_close_comment{
