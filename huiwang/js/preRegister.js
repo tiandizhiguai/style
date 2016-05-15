@@ -4,6 +4,17 @@ function checkLoginName(loginName){
 		return false;
 	}
 	
+	var reg = /^\w+$/;
+	if(!reg.test(loginName)){
+		$("#check_user").empty().append("只能包含字母、数字及下划线");
+		return false;
+	}
+	
+	if(loginName.length > 50){
+		$("#check_user").empty().append("最多包含50个字符");
+		return false;
+	}
+	
 	$.post('//www.1huiwang.com/json/loginNameExists',{'loginName': loginName},function(data){
 		if(data){
 			$("#check_user").empty().append("该登陆名已经存在");
