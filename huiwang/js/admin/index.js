@@ -20,12 +20,15 @@ $(function(){
 		adminContxtFunc("/article/adminArticles?pageNo=1&pageSize=10&userId="+$userId);
 	});
 	$(".left_nav_item:eq(2)").click(function(){
+		adminContxtFunc("/article/caredArticles?pageNo=1&pageSize=10&userId="+$userId);
+	});
+	$(".left_nav_item:eq(5)").click(function(){
 		adminContxtFunc("/admin/preUploadPhoto?id="+$userId);
 	});
-	$(".left_nav_item:eq(3)").click(function(){
+	$(".left_nav_item:eq(6)").click(function(){
 		adminContxtFunc("/admin/preEditAdmin?userId="+$userId);
 	});
-	$(".left_nav_item:eq(4)").click(function(){
+	$(".left_nav_item:eq(7)").click(function(){
 		adminContxtFunc("/admin/preEditPassword?userId="+$userId);
 	});
 });
