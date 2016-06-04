@@ -1,4 +1,4 @@
-var editor;
+/*var editor;
 KindEditor.ready(function(K) {
 	K.each({
 		'plug-align' : {
@@ -48,9 +48,29 @@ KindEditor.ready(function(K) {
 		});
 	});
 	editor = K.create('#text_content', {
-		themeType : 'qq',
+		themeType : 'simple',
 		items : [
-			'bold','italic','underline','fontname','fontsize','forecolor','hilitecolor','plug-align','plug-order','plug-indent','link'
-		]
+			'bold','italic','underline','fontname','fontsize','forecolor','hilitecolor','plug-align','plug-order','plug-indent','link','image'
+		],
+		allowImageUpload:true,
+		allowImageRemote:false
+	});
+});*/
+
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('#text_content', {
+		width : '530px',
+		minWidth : '530px',
+		resizeType : 1,
+		allowPreviewEmoticons : false,
+		allowImageUpload:true,
+		allowImageRemote:false,
+		items : [
+			'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+			'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+			'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+		uploadJson : '//www.1huiwang.com/json/uploadArticleImg',
+		allowFileManager : false
 	});
 });
