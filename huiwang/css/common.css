@@ -53,3 +53,11 @@ textarea, input, select{
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
 }
+
+.hidden{
+	display:none;
+}
+
+.show{
+	display:block;
+}

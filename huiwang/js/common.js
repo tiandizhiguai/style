@@ -44,6 +44,13 @@ StringBuilder.prototype.del = function(lastNum)
     return this ;
 }
 
+//获取url参数
+function getQueryString(name) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return unescape(r[2]); return null;
+}
+
 //获取省份
 function getAllProvince(selectProvinceId){
 	$.post('/json/getAllProvince',function(data){

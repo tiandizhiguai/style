@@ -12,6 +12,14 @@ $(function(){
 		});
 	});
 	
+	var type = getQueryString("type");
+	if(type == "addArticle"){
+		$(".left_nav_item:eq(0)").addClass('left_nav_click').siblings().removeClass('left_nav_click');
+		adminContxtFunc("/article/preAddArticle");
+	}else if(type == "message"){
+		//预留，消息列表
+	}
+	
 	var $userId = $(".userId").val();
 	$(".left_nav_item:eq(0)").click(function(){
 		adminContxtFunc("/article/preAddArticle");

@@ -48,7 +48,7 @@ function initTopic(topicId){
 
 $(function(){
 	
-	//初始化话题
+	//初始化主题
 	var topicId = $("#topic_id").val();
 	initTopic(topicId);
 	
