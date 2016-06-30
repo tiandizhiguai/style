@@ -108,6 +108,27 @@ function paraiseAndCare(){
 	});
 }
 
+/*function getUrlRequest(){
+	var url = location.search; //获取url中"?"符后的字串
+	var paramArray = new Array();
+	if (url.indexOf("?") != -1) {
+		var str = url.substr(1);
+		var theRequest = new Object();
+		if (str.indexOf("&") != -1) {
+			strs = str.split("&");
+			for (var i = 0; i < strs.length; i++) {
+				theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+			}
+		} else {
+			var key = str.substring(0,str.indexOf("="));
+			var value = str.substr(str.indexOf("=")+1);
+			theRequest[key] = decodeURI(value);
+		}
+	}
+	paramArray.push(theRequest);
+	return paramArray;
+}*/
+
 $(function(){
 	
 	//初始化文章数据
@@ -121,13 +142,15 @@ $(function(){
 	
 	var $pageNo = parseInt($(".page_no").val());
 	var $totalPage = parseInt($(".total_page").val());
+	var topicId = getQueryString("topicId");
 	
 	$("#pre_page").click(function(){
 		var $prePage = 1;
 		if($pageNo > 1){
 		   $prePage = $pageNo - 1;
 		   $("#submit_page_no").val($prePage);
-		   $("#index_form").attr("action", "//www.1huiwang.com/index").submit();
+		   $(".hidden_param:first").attr("name","topicId").attr("value", topicId);
+		   $("#index_form").attr("action", window.location.href).submit();
 		}
 	});
 	
@@ -135,7 +158,8 @@ $(function(){
 		if($pageNo < $totalPage){
 		    var $nextPage = $pageNo + 1;
 			$("#submit_page_no").val($nextPage);
-			$("#index_form").attr("action", "//www.1huiwang.com/index").submit();
+			$(".hidden_param:first").attr("name","topicId").attr("value", topicId);
+			$("#index_form").attr("action", window.location.href).submit();
 		}
 	});
 	
