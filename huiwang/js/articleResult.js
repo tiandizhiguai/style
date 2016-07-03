@@ -108,26 +108,33 @@ function paraiseAndCare(){
 	});
 }
 
-/*function getUrlRequest(){
+function getUrlParamNames(){
 	var url = location.search; //获取url中"?"符后的字串
-	var paramArray = new Array();
+	var paramNames = new Array();
 	if (url.indexOf("?") != -1) {
 		var str = url.substr(1);
-		var theRequest = new Object();
 		if (str.indexOf("&") != -1) {
 			strs = str.split("&");
 			for (var i = 0; i < strs.length; i++) {
-				theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+				paramNames.push(strs[i].split("=")[0]);
 			}
 		} else {
-			var key = str.substring(0,str.indexOf("="));
-			var value = str.substr(str.indexOf("=")+1);
-			theRequest[key] = decodeURI(value);
+			paramNames.push(str.substring(0,str.indexOf("=")));
 		}
 	}
-	paramArray.push(theRequest);
-	return paramArray;
-}*/
+	return paramNames;
+}
+
+function hiddenSubmitData(){
+	var paramNames = getUrlParamNames();
+	for(var i in paramNames){
+		var name = paramNames[i];
+		if(name != "pageNo" && name != "pageSize"){
+			var value = getUrlParamValueByName(name);
+			$("#hidden_param_" + i).attr("name",name).attr("value", value);
+		}
+	}
+}
 
 $(function(){
 	
@@ -149,7 +156,7 @@ $(function(){
 		if($pageNo > 1){
 		   $prePage = $pageNo - 1;
 		   $("#submit_page_no").val($prePage);
-		   $(".hidden_param:first").attr("name","topicId").attr("value", topicId);
+		   hiddenSubmitData();
 		   $("#index_form").attr("action", window.location.href).submit();
 		}
 	});
@@ -158,7 +165,7 @@ $(function(){
 		if($pageNo < $totalPage){
 		    var $nextPage = $pageNo + 1;
 			$("#submit_page_no").val($nextPage);
-			$(".hidden_param:first").attr("name","topicId").attr("value", topicId);
+			hiddenSubmitData();
 			$("#index_form").attr("action", window.location.href).submit();
 		}
 	});
