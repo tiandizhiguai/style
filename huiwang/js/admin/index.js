@@ -17,7 +17,9 @@ $(function(){
 		$(".left_nav_item:eq(0)").addClass('left_nav_click').siblings().removeClass('left_nav_click');
 		adminContxtFunc("/article/preAddArticle");
 	}else if(type == "message"){
-		//预留，消息列表
+		adminContxtFunc("/message/adminMessage");
+	}else if(type == "message"){
+		//其他
 	}
 	
 	var $userId = $(".userId").val();
@@ -30,13 +32,16 @@ $(function(){
 	$(".left_nav_item:eq(2)").click(function(){
 		adminContxtFunc("/article/caredArticles?pageNo=1&pageSize=10&userId="+$userId);
 	});
-	$(".left_nav_item:eq(5)").click(function(){
-		adminContxtFunc("/admin/preUploadPhoto?id="+$userId);
+	$(".left_nav_item:eq(3)").click(function(){
+		adminContxtFunc("/message/adminMessage?pageNo=1&pageSize=10&toUserId="+$userId);
 	});
 	$(".left_nav_item:eq(6)").click(function(){
-		adminContxtFunc("/admin/preEditAdmin?userId="+$userId);
+		adminContxtFunc("/admin/preUploadPhoto?id="+$userId);
 	});
 	$(".left_nav_item:eq(7)").click(function(){
+		adminContxtFunc("/admin/preEditAdmin?userId="+$userId);
+	});
+	$(".left_nav_item:eq(8)").click(function(){
 		adminContxtFunc("/admin/preEditPassword?userId="+$userId);
 	});
 });

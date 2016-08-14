@@ -61,3 +61,7 @@ textarea, input, select{
 .show{
 	display:block;
 }
+
+.font_wight{
+	font-weight : bold;
+}
