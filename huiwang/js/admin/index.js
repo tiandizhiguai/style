@@ -17,7 +17,7 @@ $(function(){
 		$(".left_nav_item:eq(0)").addClass('left_nav_click').siblings().removeClass('left_nav_click');
 		adminContxtFunc("/article/preAddArticle");
 	}else if(type == "message"){
-		adminContxtFunc("/message/adminMessage");
+		adminContxtFunc("/message/adminMessage?toUserId="+$(".login_user_id").val());
 	}else if(type == "message"){
 		//其他
 	}
